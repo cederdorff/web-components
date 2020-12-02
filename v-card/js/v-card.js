@@ -32,7 +32,7 @@ class VCard extends HTMLElement {
         }
         h2{
           font-weight: 200;
-          letter-spacing: 2px;
+          letter-spacing: 1.5px;
         }
       </style>
 
