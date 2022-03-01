@@ -1,13 +1,4 @@
 class VCard extends HTMLElement {
-    constructor() {
-        super();
-
-        this.heading = "";
-        this.initials = "";
-        this.position = "";
-        this.image = "";
-    }
-
     connectedCallback() {
         this.attachShadow({ mode: "open" });
 
@@ -24,13 +15,15 @@ class VCard extends HTMLElement {
       <style>
         img{ 
           width: 100%;
+          height: 250px;
+          object-fit: cover;
         }
         article{
           padding: 1em;
         }
         h2{
-          font-weight: 200;
-          letter-spacing: 1.5px;
+          font-weight: 400;
+          letter-spacing: 0.5px;
         }
       </style>
 
