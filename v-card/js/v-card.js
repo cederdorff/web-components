@@ -1,28 +1,26 @@
-"use strict"; // to enable strict mode and modern JavaScript functionality
-
 class VCard extends HTMLElement {
-  constructor() {
-    super();
+    constructor() {
+        super();
 
-    this.heading = "";
-    this.initials = "";
-    this.position = "";
-    this.image = "";
-  }
+        this.heading = "";
+        this.initials = "";
+        this.position = "";
+        this.image = "";
+    }
 
-  connectedCallback() {
-    this.attachShadow({ mode: 'open' });
-  
-    this.heading = this.getAttribute("heading");
-    this.initials = this.getAttribute("initials");
-    this.position = this.getAttribute("position");
-    this.image = this.getAttribute("image");
+    connectedCallback() {
+        this.attachShadow({ mode: "open" });
 
-    this.render();
-  }
+        this.heading = this.getAttribute("heading");
+        this.initials = this.getAttribute("initials");
+        this.position = this.getAttribute("position");
+        this.image = this.getAttribute("image");
 
-  render() {
-    this.shadowRoot.innerHTML = /*html*/`
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = /*html*/ `
       <style>
         img{ 
           width: 100%;
@@ -43,11 +41,11 @@ class VCard extends HTMLElement {
         <p><a href="mailto:${this.getMail()}">${this.getMail()}</a></p>
       </article>
       `;
-  }
+    }
 
-  getMail() {
-    return `${this.initials}@eaaa.dk`;
-  }
+    getMail() {
+        return `${this.initials}@eaaa.dk`;
+    }
 }
 
 customElements.define("v-card", VCard);
