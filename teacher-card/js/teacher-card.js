@@ -1,4 +1,4 @@
-class VCard extends HTMLElement {
+class TeacherCard extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: "open" });
 
@@ -19,8 +19,10 @@ class VCard extends HTMLElement {
           object-fit: cover;
         }
         article{
-          padding: 1em;
+          padding: 1.5em;
+          box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
         }
+        
         h2{
           font-weight: 400;
           letter-spacing: 0.5px;
@@ -41,4 +43,4 @@ class VCard extends HTMLElement {
     }
 }
 
-customElements.define("v-card", VCard);
+customElements.define("teacher-card", TeacherCard);
