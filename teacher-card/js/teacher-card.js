@@ -2,7 +2,7 @@ class TeacherCard extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: "open" });
 
-        this.heading = this.getAttribute("heading");
+        this.name = this.getAttribute("name");
         this.initials = this.getAttribute("initials");
         this.position = this.getAttribute("position");
         this.image = this.getAttribute("image");
@@ -30,8 +30,8 @@ class TeacherCard extends HTMLElement {
       </style>
 
       <article>
-        <img src="${this.image}">
-        <h2>${this.heading}</h2>
+        <img src="${this.image}" alt="${this.name}">
+        <h2>${this.name}</h2>
         <p>${this.position}</p>
         <p><a href="mailto:${this.getMail()}">${this.getMail()}</a></p>
       </article>
